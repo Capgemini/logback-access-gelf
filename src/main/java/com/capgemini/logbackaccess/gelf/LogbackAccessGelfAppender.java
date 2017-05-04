@@ -62,6 +62,7 @@ public class LogbackAccessGelfAppender extends AppenderBase<AccessEvent> {
     private Boolean responseContent;
     private Boolean statusCode;
     private Boolean contentLength;
+    private Boolean elapsedTime;
 
     /**
      * The main append method. Takes the event that is being logged, formats if for GELF and then sends it over the wire
@@ -141,6 +142,9 @@ public class LogbackAccessGelfAppender extends AppenderBase<AccessEvent> {
         if (checkBoolean(contentLength)) {
             map.put("_contentLength", String.valueOf(accessEvent.getContentLength()));
         }
+        if (checkBoolean(elapsedTime)) {
+            map.put("_elapsedTime", String.valueOf(accessEvent.getElapsedTime()));
+        }
     }
 
     private boolean checkBoolean(Boolean val) {
@@ -199,8 +203,6 @@ public class LogbackAccessGelfAppender extends AppenderBase<AccessEvent> {
         }
     }
 
-
-    //////////// Logback Property Getter/Setters ////////////////
 
     /**
      * The name of your service. Appears in facility column in graylog2-web-interface
@@ -478,5 +480,13 @@ public class LogbackAccessGelfAppender extends AppenderBase<AccessEvent> {
 
     public void setContentLength(Boolean contentLength) {
         this.contentLength = contentLength;
+    }
+
+    public Boolean getElapsedTime() {
+        return elapsedTime;
+    }
+
+    public void setElapsedTime(Boolean elapsedTime) {
+        this.elapsedTime = elapsedTime;
     }
 }

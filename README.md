@@ -7,20 +7,7 @@ This extends the functionality for [logback-gelf](https://github.com/Moocar/logb
 
 Using Logback Access
 --------------------
-Repository Configuration :
 
-
-    <repositories>
-         <repository>
-             <snapshots>
-                 <enabled>false</enabled>
-             </snapshots>
-             <id>bintray-biplabnayak-maven</id>
-             <name>bintray</name>
-             <url>http://dl.bintray.com/biplabnayak/maven</url>
-         </repository>
-      </repositories>
-      
 Dependency :
 
     <dependency>
@@ -79,21 +66,3 @@ E.g in the appender configuration:
         </appender>
         ...
 
-
-Publish to bintray
------------------
-
-Add below configuration to maven settings.xml.
- 
- 
-     		<server>
-     		    <id>bintray-biplabnayak-maven</id>
-     		    <username>biplabnayak</username>
-     		    <password>***secret api key***</password>
-     		</server>
-    
-   
-Command :
-
-
-            mvn clean deploy
