@@ -5,7 +5,7 @@
   <groupId>com.capgemini</groupId>
   <artifactId>logback-access-gelf</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.5-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>logback-access-gelf</name>
   <description>Adapter for sending Access log to graylog server.</description>
   <url>https://github.com/biplabnayak/logback-access-gelf</url>
